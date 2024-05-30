@@ -107,7 +107,7 @@
         Your browser does not support the audio element.
     </audio>
     <div class="counter cat-counter" id="cat-counter">🐱: 0</div>
-    <div class="reach-message" id="reach-message">Reach 💯</div>
+    <div class="reach-message" id="reach-message">Reach 100</div>
     <div class="counter heart-counter" id="heart-counter">❤️ : 0</div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -248,7 +248,7 @@
                     heartCounter.textContent = `❤️: ${heartCount}`;
                     if (heartCount >= 50 && heartCount < 100) {
                         heartGif = 'heart2.gif';
-                        reachMessage.textContent = 'Reach 💯';
+                        reachMessage.textContent = 'Reach 100';
                     } else if (heartCount >= 100) {
                         heartGif = 'heart3.gif';
                         reachMessage.textContent = '🇺🇸';
@@ -259,7 +259,7 @@
                     catCounter.textContent = `🐱: ${catCount}`;
                     if (catCount >= 50 && catCount < 100) {
                         catGif = 'cat2.gif';
-                        reachMessage.textContent = 'Reach 💯';
+                        reachMessage.textContent = 'Reach 100';
                     } else if (catCount >= 100) {
                         catGif = 'cat3.gif';
                         reachMessage.textContent = 'Enjoy!';
