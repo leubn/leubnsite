@@ -62,6 +62,17 @@
         .heart-counter {
             right: 10px;
         }
+        .reach-message {
+            position: absolute;
+            top: 10px;
+            font-size: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         @keyframes fadeOut {
             0% {
                 opacity: 1;
@@ -92,6 +103,7 @@
         Your browser does not support the audio element.
     </audio>
     <div class="counter cat-counter" id="cat-counter">Cats: 0</div>
+    <div class="reach-message" id="reach-message">Reach 50</div>
     <div class="counter heart-counter" id="heart-counter">Hearts: 0</div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -100,6 +112,7 @@
             const tapGif = document.getElementById('tap-gif');
             const catCounter = document.getElementById('cat-counter');
             const heartCounter = document.getElementById('heart-counter');
+            const reachMessage = document.getElementById('reach-message');
             let clickCount = 0;
             let switchCount = 0;
             const switchClicks = 3;
@@ -197,7 +210,7 @@
 
                         setTimeout(() => {
                             document.body.removeChild(messageElement);
-                        }, 7000); // Duration of each messagess
+                        }, 5000); // Duration of each message
                     }, delay);
                     delay += 2000; // Delay between messages
                 });
@@ -212,21 +225,27 @@
                     createFloatingGif(heartGif, event.clientX, event.clientY);
                     heartCount++;
                     heartCounter.textContent = `Hearts: ${heartCount}`;
-                    if (heartCount >= 30 && heartCount < 55) {
+                    if (heartCount >= 50 && heartCount < 100) {
                         heartGif = 'heart2.gif';
+                        reachMessage.textContent = 'Reach 100';
+                    } else if (heartCount >= 100) {
+                        heartGif = 'heart3.gif';
+                        reachMessage.textContent = 'Enjoy';
                     }
                 } else {
                     createFloatingGif(catGif, event.clientX, event.clientY);
                     catCount++;
                     catCounter.textContent = `Cats: ${catCount}`;
-                    if (catCount >= 30 && catCount < 55) {
+                    if (catCount >= 50 && catCount < 100) {
                         catGif = 'cat2.gif';
+                        reachMessage.textContent = 'Reach 100';
+                    } else if (catCount >= 100) {
+                        catGif = 'cat3.gif';
+                        reachMessage.textContent = 'Enjoy';
                     }
                 }
 
-                if (!animationPlayed && heartCount >= 55 && catCount >= 55) {
-                    heartGif = 'heart3.gif';
-                    catGif = 'cat3.gif';
+                if (!animationPlayed && heartCount >= 100 && catCount >= 100) {
                     showMessages();
                     animationPlayed = true;
                 }
