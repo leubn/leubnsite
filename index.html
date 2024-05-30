@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0",user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>leubn</title>
     <style>
         body, html {
@@ -46,6 +46,7 @@
             height: 50px; /* Adjust size as needed */
             object-fit: cover;
             animation: floatUp 2s forwards;
+            
         }
         .counter {
             position: absolute;
@@ -58,9 +59,11 @@
         }
         .cat-counter {
             left: 10px;
+            display: none; /* Hide GIF initially */
         }
         .heart-counter {
             right: 10px;
+            display: none; /* Hide GIF initially */
         }
         .reach-message {
             position: absolute;
@@ -72,6 +75,7 @@
             border-radius: 5px;
             left: 50%;
             transform: translateX(-50%);
+            display: none; /* Hide GIF initially */
         }
         @keyframes fadeOut {
             0% {
@@ -129,6 +133,9 @@
                     console.log('Audio play was prevented:', error);
                 });
                 gif.style.display = 'block'; // Show test GIF
+                catCounter.style.display = 'block'; // Show cat counter
+                heartCounter.style.display = 'block'; // Show heart counter
+                reachMessage.style.display = 'block'; // Show reach message
                 tapGif.style.display = 'none'; // Hide tap GIF
                 document.body.style.backgroundColor = 'transparent'; // Remove black background
             };
