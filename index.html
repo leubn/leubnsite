@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0",user-scalable=no">
     <title>leubn</title>
     <style>
         body, html {
@@ -238,7 +238,7 @@
                 if (isHeartGif) {
                     createFloatingGif(heartGif, event.clientX, event.clientY);
                     heartCount++;
-                    heartCounter.textContent = `Hearts: ${heartCount}`;
+                    heartCounter.textContent = `❤️: ${heartCount}`;
                     if (heartCount >= 50 && heartCount < 100) {
                         heartGif = 'heart2.gif';
                         reachMessage.textContent = 'Reach 💯';
@@ -249,13 +249,13 @@
                 } else {
                     createFloatingGif(catGif, event.clientX, event.clientY);
                     catCount++;
-                    catCounter.textContent = `Cats: ${catCount}`;
+                    catCounter.textContent = `🐱: ${catCount}`;
                     if (catCount >= 50 && catCount < 100) {
                         catGif = 'cat2.gif';
                         reachMessage.textContent = 'Reach 💯';
                     } else if (catCount >= 100) {
                         catGif = 'cat3.gif';
-                        reachMessage.textContent = 'Enjoy';
+                        reachMessage.textContent = 'Enjoy!';
                     }
                 }
 
