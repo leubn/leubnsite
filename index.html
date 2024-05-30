@@ -170,13 +170,21 @@
                 const messages = [
                     'Congratulations!',
                     'I love you',
-                    'I hereby declare, on oath, that I absolutely and entirely renounce and abjure all allegiance and fidelity to any foreign prince, potentate, state, or sovereignty, of whom or which I have heretofore been a subject or citizen;',
-                    'that I will support and defend the Constitution and laws of the United States of America against all enemies, foreign and domestic;',
+                    'I hereby declare, on oath, that I absolutely and entirely renounce',
+                    'and abjure all allegiance and fidelity to any foreign prince, potentate,',
+                    'state, or sovereignty, of whom or which I have heretofore',
+                    'been a subject or citizen;',
+                    'that I will support and defend the Constitution and laws of',
+                    'the United States of America against all enemies, foreign and domestic;',
                     'that I will bear true faith and allegiance to the same;',
                     'that I will bear arms on behalf of the United States when required by the law;',
-                    'that I will perform noncombatant service in the Armed Forces of the United States when required by the law;',
-                    'that I will perform work of national importance under civilian direction when required by the law;',
-                    'and that I take this obligation freely, without any mental reservation or purpose of evasion; so help me God.'
+                    'that I will perform noncombatant service', 
+                    'in the Armed Forces of the United States when required by the law;',
+                    'that I will perform work of national importanc',
+                    'under civilian direction when required by the law;',
+                    'and that I take this obligation freely,',
+                    'without any mental reservation or purpose of evasion;',
+                    'so help me God.'
                 ];
 
                 let delay = 0;
@@ -189,7 +197,7 @@
 
                         setTimeout(() => {
                             document.body.removeChild(messageElement);
-                        }, 7000); // Duration of each message
+                        }, 7000); // Duration of each messagess
                     }, delay);
                     delay += 2000; // Delay between messages
                 });
@@ -204,19 +212,19 @@
                     createFloatingGif(heartGif, event.clientX, event.clientY);
                     heartCount++;
                     heartCounter.textContent = `Hearts: ${heartCount}`;
-                    if (heartCount >= 50 && heartCount < 100) {
+                    if (heartCount >= 30 && heartCount < 55) {
                         heartGif = 'heart2.gif';
                     }
                 } else {
                     createFloatingGif(catGif, event.clientX, event.clientY);
                     catCount++;
                     catCounter.textContent = `Cats: ${catCount}`;
-                    if (catCount >= 50 && catCount < 100) {
+                    if (catCount >= 30 && catCount < 55) {
                         catGif = 'cat2.gif';
                     }
                 }
 
-                if (!animationPlayed && heartCount >= 100 && catCount >= 100) {
+                if (!animationPlayed && heartCount >= 55 && catCount >= 55) {
                     heartGif = 'heart3.gif';
                     catGif = 'cat3.gif';
                     showMessages();
